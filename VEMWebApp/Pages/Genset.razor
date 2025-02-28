@@ -1,0 +1,339 @@
+@page "/"
+@page "/genset"
+@using Northwind
+@using Models.Northwind
+@inject INorthwindService NorthwindService
+
+<div class="column-layout genset-container">
+    <div class="row-layout group">
+        <h2 class="h2">
+            Genset
+        </h2>
+    </div>
+    <div class="column-layout group_1">
+        <IgbTabs class="tabs" genset-scope>
+            <IgbTab Selected="true">
+                <span slot="prefix">
+                    <span class="material-icons icon">
+                        bar_chart
+                    </span>
+                </span>
+                <p class="typography__body-1 text">
+                    Overview
+                </p>
+            </IgbTab>
+            <IgbTabPanel class="row-layout tab-item-content" genset-scope>
+                <IgbHierarchicalGrid Data="@_northwindOrders" PrimaryKey="OrderID" AllowFiltering="true" FilterMode="FilterMode.ExcelStyleFilter" class="ig-typography hierarchical-grid" genset-scope>
+                    <IgbPaginator PerPage="10"></IgbPaginator>
+                    <IgbRowIsland ChildDataKey="Details" PrimaryKey="ProductID" AllowFiltering="true" FilterMode="FilterMode.ExcelStyleFilter">
+                        <IgbColumn Field="ProductID" DataType="GridColumnDataType.Number" Header="productID" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="UnitPrice" DataType="GridColumnDataType.Number" Header="unitPrice" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="Quantity" DataType="GridColumnDataType.Number" Header="quantity" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="Discount" DataType="GridColumnDataType.Number" Header="discount" Sortable="true" Selectable="false"></IgbColumn>
+                    </IgbRowIsland>
+                    <IgbColumn Field="OrderID" DataType="GridColumnDataType.Number" Header="orderID" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="CustomerID" DataType="GridColumnDataType.String" Header="customerID" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="EmployeeID" DataType="GridColumnDataType.Number" Header="employeeID" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="OrderDate" DataType="GridColumnDataType.Date" Header="orderDate" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="RequiredDate" DataType="GridColumnDataType.Date" Header="requiredDate" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="ShippedDate" DataType="GridColumnDataType.Date" Header="shippedDate" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="ShipVia" DataType="GridColumnDataType.Number" Header="shipVia" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="Freight" DataType="GridColumnDataType.Number" Header="freight" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="ShipName" DataType="GridColumnDataType.String" Header="shipName" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="ShipAddress.Street" DataType="GridColumnDataType.String" Header="shipAddress street" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="ShipAddress.City" DataType="GridColumnDataType.String" Header="shipAddress city" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="ShipAddress.Region" DataType="GridColumnDataType.String" Header="shipAddress region" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="ShipAddress.PostalCode" DataType="GridColumnDataType.String" Header="shipAddress postalCode" Sortable="true" Selectable="false"></IgbColumn>
+                    <IgbColumn Field="ShipAddress.Country" DataType="GridColumnDataType.String" Header="shipAddress country" Sortable="true" Selectable="false"></IgbColumn>
+                </IgbHierarchicalGrid>
+            </IgbTabPanel>
+            <IgbTab>
+                <span slot="prefix">
+                    <span class="material-icons icon">
+                        add_box
+                    </span>
+                </span>
+                <p class="typography__body-1 text">
+                    Create
+                </p>
+            </IgbTab>
+            <IgbTabPanel class="row-layout tab-item-content_1" genset-scope>
+                <EditForm class="column-layout form">
+                    <div class="row-layout group_2">
+                        <div class="column-layout group_3">
+                            <h5 class="h5">
+                                General
+                            </h5>
+                            <IgbDatePicker Label="Transfer Date" Outlined="true" Mode="DatePickerMode.Dialog" class="date-picker" genset-scope></IgbDatePicker>
+                            <IgbSelect Outlined="true" Label="User Group" class="user-input" genset-scope>
+                                <span slot="prefix">
+                                    <span class="material-icons icon">
+                                        person
+                                    </span>
+                                </span>
+                                <IgbSelectItem Value="Option">
+                                    Option
+                                </IgbSelectItem>
+                            </IgbSelect>
+                            <IgbSelect Outlined="true" Label="EDI Status" class="user-input" genset-scope>
+                                <span slot="prefix">
+                                    <span class="material-icons icon">
+                                        info
+                                    </span>
+                                </span>
+                                <IgbSelectItem Value="Option">
+                                    Option
+                                </IgbSelectItem>
+                            </IgbSelect>
+                            <IgbDatePicker Label="EDI Sent Date" Outlined="true" Mode="DatePickerMode.Dialog" class="date-picker" genset-scope></IgbDatePicker>
+                            <IgbTextarea Label="Notes" Outlined="true" class="user-input" genset-scope></IgbTextarea>
+                            <IgbRadioGroup Alignment="RadioGroupAlignment.Horizontal" Value="@_value" Change="@(e => _value = e.Detail.Value)" class="user-input_1" genset-scope>
+                                <IgbRadio Value="1" class="radio" genset-scope>
+                                    ST
+                                </IgbRadio>
+                                <IgbRadio Value="2" class="radio" genset-scope>
+                                    DST
+                                </IgbRadio>
+                                <IgbRadio Value="3" class="radio" genset-scope>
+                                    OT
+                                </IgbRadio>
+                                <IgbRadio Value="4" class="radio" genset-scope>
+                                    DOT
+                                </IgbRadio>
+                                <IgbRadio Value="5" class="radio" genset-scope>
+                                    FT
+                                </IgbRadio>
+                            </IgbRadioGroup>
+                            <IgbCheckbox LabelPosition="CheckboxBaseLabelPosition.After" class="user-input_1" genset-scope>
+                                Approved
+                            </IgbCheckbox>
+                        </div>
+                        <div class="column-layout group_3">
+                            <h5 class="h5">
+                                Operation
+                            </h5>
+                            <IgbSelect Outlined="true" Label="Location" class="user-input" genset-scope>
+                                <span slot="prefix">
+                                    <span class="material-icons icon">
+                                        location_on
+                                    </span>
+                                </span>
+                                <IgbSelectItem Value="Option">
+                                    Option
+                                </IgbSelectItem>
+                            </IgbSelect>
+                            <IgbSelect Outlined="true" Label="Customer" class="user-input" genset-scope>
+                                <span slot="prefix">
+                                    <span class="material-icons icon">
+                                        person
+                                    </span>
+                                </span>
+                                <IgbSelectItem Value="Option">
+                                    Option
+                                </IgbSelectItem>
+                            </IgbSelect>
+                            <IgbSelect Outlined="true" Label="Subaccount" class="user-input" genset-scope>
+                                <span slot="prefix">
+                                    <span class="material-icons icon">
+                                        person
+                                    </span>
+                                </span>
+                                <IgbSelectItem Value="Option">
+                                    Option
+                                </IgbSelectItem>
+                            </IgbSelect>
+                            <IgbInput DisplayType="InputType.Number" Label="Unit Number" Outlined="true" class="user-input" genset-scope>
+                                <span slot="prefix">
+                                    <span class="material-icons icon">
+                                        numbers
+                                    </span>
+                                </span>
+                            </IgbInput>
+                            <IgbInput DisplayType="InputType.Number" Label="Serial Number" Outlined="true" class="user-input" genset-scope>
+                                <span slot="prefix">
+                                    <span class="material-icons icon">
+                                        numbers
+                                    </span>
+                                </span>
+                            </IgbInput>
+                            <IgbInput Label="Created By" Outlined="true" class="user-input" genset-scope>
+                                <span slot="prefix">
+                                    <span class="material-icons icon">
+                                        person
+                                    </span>
+                                </span>
+                            </IgbInput>
+                            <IgbDatePicker Label="Created On" Outlined="true" Mode="DatePickerMode.Dialog" class="date-picker" genset-scope></IgbDatePicker>
+                            <IgbInput Label="Teammate" Outlined="true" class="user-input" genset-scope>
+                                <span slot="prefix">
+                                    <span class="material-icons icon">
+                                        person
+                                    </span>
+                                </span>
+                            </IgbInput>
+                            <IgbInput Label="DS5 Ref" Outlined="true" class="user-input" genset-scope>
+                                <span slot="prefix">
+                                    <span class="material-icons icon">
+                                        person
+                                    </span>
+                                </span>
+                            </IgbInput>
+                            <IgbSelect Outlined="true" Label="Form Status" class="user-input" genset-scope>
+                                <span slot="prefix">
+                                    <span class="material-icons icon">
+                                        info
+                                    </span>
+                                </span>
+                                <IgbSelectItem Value="Option">
+                                    Option
+                                </IgbSelectItem>
+                            </IgbSelect>
+                        </div>
+                    </div>
+                    <IgbButton DisplayType="ButtonBaseType.Button" class="button" genset-scope>
+                        Submit
+                        <IgbRipple></IgbRipple>
+                    </IgbButton>
+                </EditForm>
+            </IgbTabPanel>
+            <IgbTab>
+                <span slot="prefix">
+                    <span class="material-icons icon">
+                        person
+                    </span>
+                </span>
+                <p class="typography__body-1 text">
+                    Tab Header
+                </p>
+            </IgbTab>
+            <IgbTabPanel class="row-layout tab-item-content" genset-scope>
+                <IgbDialog CloseOnOutsideClick="true" @ref="_dialog">
+                    <h5 slot="title">
+                        Confirmation
+                    </h5>
+                    <p>Are you sure you want to do this?</p>
+                    <div slot="footer">
+                        <IgbButton Variant="ButtonVariant.Flat" @onclick="@(e => _dialog!.ToggleAsync())">
+                            Cancel
+                            <IgbRipple></IgbRipple>
+                        </IgbButton>
+                        <IgbButton Variant="ButtonVariant.Flat" @onclick="@(e => _dialog!.ToggleAsync())">
+                            OK
+                            <IgbRipple></IgbRipple>
+                        </IgbButton>
+                    </div>
+                </IgbDialog>
+                <IgbStepper TitlePosition="StepperTitlePosition.Bottom" @ref="_stepper" class="stepper" genset-scope>
+                    <IgbStep Optional="true">
+                        <span slot="indicator" class="material-icons">
+                            local_gas_station
+                        </span>
+                        <div class="column-layout step-content">
+                            <div class="row-layout group_4">
+                                <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.NextAsync())" class="button_1" genset-scope>
+                                    Next
+                                    <IgbRipple></IgbRipple>
+                                </IgbButton>
+                            </div>
+                        </div>
+                        <p slot="title">Fueling</p>
+                    </IgbStep>
+                    <IgbStep Optional="true">
+                        <span slot="indicator" class="material-icons">
+                            precision_manufacturing
+                        </span>
+                        <div class="column-layout step-content">
+                            <div class="row-layout group_4">
+                                <EditForm class="column-layout form_1">
+                                    <IgbInput Label="Label" Outlined="true" class="user-input" genset-scope></IgbInput>
+                                    <IgbDatePicker Label="Date" Outlined="true" Mode="DatePickerMode.Dialog" class="date-picker" genset-scope></IgbDatePicker>
+                                    <IgbRadioGroup Alignment="RadioGroupAlignment.Horizontal" Value="@_value" Change="@(e => _value = e.Detail.Value)" class="user-input_1" genset-scope>
+                                        <IgbRadio Value="1" class="radio" genset-scope>
+                                            Label
+                                        </IgbRadio>
+                                        <IgbRadio Value="2" class="radio" genset-scope>
+                                            Label
+                                        </IgbRadio>
+                                        <IgbRadio Value="3" class="radio" genset-scope>
+                                            Label
+                                        </IgbRadio>
+                                    </IgbRadioGroup>
+                                    <IgbSelect Outlined="true" Label="Label/Placeholder" class="user-input" genset-scope>
+                                        <IgbSelectItem Value="Option">
+                                            Option
+                                        </IgbSelectItem>
+                                    </IgbSelect>
+                                    <IgbButton DisplayType="ButtonBaseType.Button" class="button" genset-scope>
+                                        Submit
+                                        <IgbRipple></IgbRipple>
+                                    </IgbButton>
+                                </EditForm>
+                                <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.NextAsync())" class="button_1" genset-scope>
+                                    Next
+                                    <IgbRipple></IgbRipple>
+                                </IgbButton>
+                            </div>
+                        </div>
+                        <p slot="title">Mount/Unmount</p>
+                    </IgbStep>
+                    <IgbStep Invalid="true">
+                        <span slot="indicator" class="material-icons">
+                            shopping_basket
+                        </span>
+                        <div class="column-layout step-content">
+                            <p class="typography__body-1 text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur soluta nulla asperiores, officia ullam recusandae voluptatem omnis perferendis vitae non magni magnam praesentium placeat nemo quas repudiandae. Nisi, quo ex!
+                            </p>
+                            <div class="row-layout group_5">
+                                <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.PrevAsync())" class="button_1" genset-scope>
+                                    Prev
+                                    <IgbRipple></IgbRipple>
+                                </IgbButton>
+                                <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.NextAsync())" class="button_1" genset-scope>
+                                    Next
+                                    <IgbRipple></IgbRipple>
+                                </IgbButton>
+                            </div>
+                        </div>
+                        <p slot="title">Item</p>
+                    </IgbStep>
+                    <IgbStep Optional="true">
+                        <span slot="indicator" class="material-icons">
+                            shopping_basket
+                        </span>
+                        <div class="column-layout step-content">
+                            <p class="typography__body-1 text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur soluta nulla asperiores, officia ullam recusandae voluptatem omnis perferendis vitae non magni magnam praesentium placeat nemo quas repudiandae. Nisi, quo ex!
+                            </p>
+                            <div class="row-layout group_5">
+                                <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.PrevAsync())" class="button_1" genset-scope>
+                                    Prev
+                                    <IgbRipple></IgbRipple>
+                                </IgbButton>
+                                <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.ResetAsync())" class="button_1" genset-scope>
+                                    Reset
+                                    <IgbRipple></IgbRipple>
+                                </IgbButton>
+                            </div>
+                        </div>
+                        <p slot="title">Wrap</p>
+                        <p slot="subtitle">(Optional)</p>
+                    </IgbStep>
+                </IgbStepper>
+            </IgbTabPanel>
+        </IgbTabs>
+    </div>
+</div>
+
+@code {
+    private IgbDialog _dialog;
+    private IgbStepper _stepper;
+    private List<OrdersType> _northwindOrders = new();
+    private string _value = "1";
+
+    protected override async Task OnInitializedAsync()
+    {
+        _northwindOrders = await NorthwindService.GetOrders();
+        await base.OnInitializedAsync();
+    }
+}
