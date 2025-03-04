@@ -15,25 +15,29 @@
     justify-content: flex-start;
     align-items: center;
     align-content: flex-start;
-    position: relative;
     padding: 16px;
-    height: 150px;
+    height: 10rem;
     min-width: 50px;
     min-height: 50px;
-    max-height: 150px;
+    max-height: 10rem;
+    flex-shrink: 0;
+}
+.tabs {
+    min-width: 0;
+    min-height: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
 }
 .group_1 {
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
     position: relative;
-    padding: 16px;
     min-width: 50px;
     min-height: 50px;
-    flex-grow: 1;
-    flex-basis: 0;
 }
-.tabs {
+.expansion-panel {
+    height: max-content;
     min-width: 0;
     min-height: 0;
     flex-grow: 1;
@@ -43,25 +47,88 @@
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
-    gap: 0;
+    gap: 1rem;
+    position: relative;
+    padding: 1rem 0 0;
     min-width: 50px;
     min-height: 50px;
+}
+.group_3 {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 1rem;
+    min-width: 50px;
+    min-height: 50px;
+    flex-shrink: 0;
+}
+.group_4 {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    min-width: 50px;
+    min-height: 50px;
+}
+.expansion-panel_1 {
+    min-width: 0;
+    min-height: 0;
     flex-grow: 1;
     flex-basis: 0;
 }
-.group_3 {
+.group_5 {
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
     gap: 1rem;
-    overflow: auto;
-    padding: 0.5rem;
+    position: relative;
+    padding: 0.5rem 0 0;
+    min-width: 50px;
+    min-height: 50px;
+}
+.group_6 {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 0.5rem;
+    position: relative;
+    padding: 0;
+    min-width: 50px;
+    min-height: 50px;
+    flex-shrink: 0;
+}
+.group_7 {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 1rem;
     min-width: 50px;
     min-height: 50px;
     flex-grow: 1;
-    flex-basis: 0;
+    flex-shrink: 0;
 }
-.group_4 {
+.group_8 {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    min-width: 50px;
+    min-height: 50px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+.group_9 {
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    min-width: 50px;
+    min-height: 50px;
+    align-self: center;
+    flex-shrink: 0;
+}
+.group_10 {
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
@@ -72,7 +139,13 @@
     flex-grow: 1;
     flex-basis: 0;
 }
-.group_5 {
+.expansion-panel_2 {
+    height: max-content;
+    min-width: 0;
+    min-height: 0;
+    flex-shrink: 0;
+}
+.group_11 {
     justify-content: flex-start;
     align-items: center;
     align-content: flex-start;
@@ -98,11 +171,6 @@
     height: max-content;
     min-width: min-content;
 }
-.h5 {
-    height: max-content;
-    min-width: min-content;
-    align-self: center;
-}
 .tab-item-content {
     justify-content: flex-start;
     align-items: stretch;
@@ -115,8 +183,10 @@
 }
 .tab-item-content_1 {
     justify-content: flex-start;
-    align-items: stretch;
+    align-items: flex-start;
     align-content: flex-start;
+    gap: 0;
+    overflow: auto;
     height: 100%;
     min-width: 100%;
     min-height: 100%;
@@ -140,48 +210,74 @@
     min-height: 100%;
     max-height: 100%;
 }
-.hierarchical-grid {
+.grid {
     --ig-size: var(--ig-size-medium);
     min-width: 600px;
     min-height: 300px;
     flex-grow: 1;
     flex-basis: 0;
 }
+.grid_1 {
+    --ig-size: var(--ig-size-medium);
+    min-width: 600px;
+    min-height: 300px;
+}
 .form {
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
-    gap: 16px;
-    padding: 16px;
+    gap: 0.5rem;
+    padding: 0;
     min-width: 50px;
     min-height: 50px;
     align-self: stretch;
     flex-grow: 1;
-    flex-basis: 0;
+    flex-shrink: 0;
 }
-.date-picker {
+.select {
     height: max-content;
-    min-width: 120px;
+    min-width: 180px;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 .user-input {
     height: max-content;
+    min-width: 120px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.dropdown {
+    left: 0;
+    top: 0;
+    position: absolute;
     min-width: min-content;
+    flex-grow: 1;
 }
 .user-input_1 {
     width: max-content;
     height: max-content;
 }
-.radio {
-    padding: 8px;
+.textarea {
+    height: max-content;
+    min-width: 240px;
+    flex-grow: 1;
+    flex-shrink: 0;
 }
 .button {
-    --ig-size: var(--ig-size-medium);
+    --ig-size: var(--ig-size-large);
+    position: relative;
     height: max-content;
+    min-width: 20rem;
+    flex-shrink: 0;
 }
 .button_1 {
     --ig-size: var(--ig-size-medium);
     height: max-content;
     flex-shrink: 0;
+}
+.button_2 {
+    --ig-size: var(--ig-size-medium);
+    height: max-content;
 }
 .form_1 {
     justify-content: flex-start;
@@ -196,4 +292,15 @@
     max-width: 489px;
     flex-grow: 1;
     flex-shrink: 0;
+}
+.user-input_2 {
+    height: max-content;
+    min-width: min-content;
+}
+.date-picker {
+    height: max-content;
+    min-width: 120px;
+}
+.dropdown::part(base) {
+    height: max-content;
 }

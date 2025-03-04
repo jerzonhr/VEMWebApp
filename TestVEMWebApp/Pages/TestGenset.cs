@@ -15,14 +15,17 @@ namespace TestVEMWebApp
       ctx.JSInterop.Mode = JSRuntimeMode.Loose;
       ctx.Services.AddIgniteUIBlazor(
         typeof(IgbTabsModule),
-        typeof(IgbHierarchicalGridModule),
-        typeof(IgbDatePickerModule),
+        typeof(IgbGridModule),
+        typeof(IgbExpansionPanelModule),
         typeof(IgbSelectModule),
-        typeof(IgbTextareaModule),
+        typeof(IgbInputModule),
+        typeof(IgbDatePickerModule),
+        typeof(IgbDropdownModule),
+        typeof(IgbDropdownItemModule),
         typeof(IgbRadioGroupModule),
         typeof(IgbRadioModule),
         typeof(IgbCheckboxModule),
-        typeof(IgbInputModule),
+        typeof(IgbTextareaModule),
         typeof(IgbButtonModule),
         typeof(IgbRippleModule),
         typeof(IgbStepperModule));
