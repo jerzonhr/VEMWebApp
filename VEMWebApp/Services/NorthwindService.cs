@@ -12,16 +12,16 @@ namespace VEMWebApp.Northwind
             _http = http;
         }
 
-        public async Task<List<OrdersType>> GetOrders()
+        public async Task<List<EmployeesType>> GetEmployees()
         {
-            using HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, new Uri("/static-data/northwind-orders-type.json", UriKind.RelativeOrAbsolute));
+            using HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, new Uri("/static-data/northwind-employees-type.json", UriKind.RelativeOrAbsolute));
             using HttpResponseMessage response = await _http.SendAsync(request).ConfigureAwait(false);
             if (response.IsSuccessStatusCode)
             {
-                return await response.Content.ReadFromJsonAsync<List<OrdersType>>().ConfigureAwait(false);
+                return await response.Content.ReadFromJsonAsync<List<EmployeesType>>().ConfigureAwait(false);
             }
 
-            return new List<OrdersType>();
+            return new List<EmployeesType>();
         }
     }
 }

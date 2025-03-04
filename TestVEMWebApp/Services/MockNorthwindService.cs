@@ -4,9 +4,9 @@ namespace VEMWebApp.Northwind
 {
     public class MockNorthwindService : INorthwindService
     {
-        public Task<List<OrdersType>> GetOrders()
+        public Task<List<EmployeesType>> GetEmployees()
         {
-            return Task.FromResult<List<OrdersType>>(new());
+            return Task.FromResult<List<EmployeesType>>(new());
         }
     }
 }

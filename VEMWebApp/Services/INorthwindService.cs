@@ -4,6 +4,6 @@ namespace VEMWebApp.Northwind
 {
     public interface INorthwindService
     {
-        Task<List<OrdersType>> GetOrders();
+        Task<List<EmployeesType>> GetEmployees();
     }
 }
