@@ -1,5 +1,33 @@
 :root {
 	--ig-font-family: 'Titillium Web', sans-serif;
+	--ig-primary-500: #12294C;
+	--ig-secondary-500: #BEA454;
+	--ig-error-500: #D91E49;
+	--ig-success-500: #93C22A;
+	--ig-warn-500: #F2CB3F;
+	--ig-info-500: #5370DF;
+	--ig-primary-50-contrast: white;
+	--ig-primary-100-contrast: white;
+	--ig-primary-200-contrast: white;
+	--ig-primary-300-contrast: white;
+	--ig-primary-400-contrast: white;
+	--ig-primary-500-contrast: white;
+	--ig-primary-600-contrast: white;
+	--ig-primary-700-contrast: white;
+	--ig-primary-A100-contrast: white;
+	--ig-primary-A200-contrast: white;
+	--ig-primary-A400-contrast: white;
+	--ig-secondary-600-contrast: black;
+	--ig-secondary-700-contrast: black;
+	--ig-secondary-800-contrast: black;
+	--ig-secondary-900-contrast: black;
+	--ig-secondary-A400-contrast: black;
+	--ig-error-400-contrast: white;
+	--ig-error-500-contrast: white;
+	--ig-error-600-contrast: white;
+	--ig-error-A400-contrast: white;
+	--ig-success-900-contrast: black;
+	--ig-success-A700-contrast: black;
 }
 
 /* Charts */

@@ -125,34 +125,8 @@
     align-content: flex-start;
     min-width: 50px;
     min-height: 50px;
-    align-self: center;
+    align-self: flex-end;
     flex-shrink: 0;
-}
-.group_10 {
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 0.5rem;
-    position: relative;
-    min-width: 50px;
-    min-height: 50px;
-    flex-grow: 1;
-    flex-basis: 0;
-}
-.expansion-panel_2 {
-    height: max-content;
-    min-width: 0;
-    min-height: 0;
-    flex-shrink: 0;
-}
-.group_11 {
-    justify-content: flex-start;
-    align-items: center;
-    align-content: flex-start;
-    gap: 0.5rem;
-    position: relative;
-    min-width: 50px;
-    min-height: 50px;
 }
 .h2 {
     height: max-content;
@@ -166,10 +140,18 @@
     font-size: 24px;
     width: 24px;
     height: 24px;
+    color: var(--ig-primary-100);
 }
 .text {
+    color: var(--ig-primary-100);
     height: max-content;
     min-width: min-content;
+}
+.icon_1 {
+    --size: 24px;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
 }
 .tab-item-content {
     justify-content: flex-start;
@@ -192,24 +174,6 @@
     min-height: 100%;
     max-height: 100%;
 }
-.stepper {
-    min-width: 0;
-    min-height: 0;
-    flex-grow: 1;
-    flex-basis: 0;
-}
-.step-content {
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: flex-start;
-    gap: 10px;
-    overflow: auto;
-    position: relative;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    max-height: 100%;
-}
 .grid {
     --ig-size: var(--ig-size-medium);
     min-width: 600px;
@@ -219,7 +183,7 @@
 }
 .grid_1 {
     --ig-size: var(--ig-size-medium);
-    min-width: 600px;
+    min-width: 300px;
     min-height: 300px;
 }
 .form {
@@ -227,7 +191,7 @@
     align-items: stretch;
     align-content: flex-start;
     gap: 0.5rem;
-    padding: 0;
+    padding: 1rem;
     min-width: 50px;
     min-height: 50px;
     align-self: stretch;
@@ -267,40 +231,12 @@
     --ig-size: var(--ig-size-large);
     position: relative;
     height: max-content;
-    min-width: 20rem;
+    min-width: 10rem;
     flex-shrink: 0;
-}
-.button_1 {
-    --ig-size: var(--ig-size-medium);
-    height: max-content;
-    flex-shrink: 0;
-}
-.button_2 {
-    --ig-size: var(--ig-size-medium);
-    height: max-content;
-}
-.form_1 {
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: flex-start;
-    gap: 16px;
-    position: relative;
-    padding: 24px;
-    width: 489px;
-    min-width: 50px;
-    min-height: 50px;
-    max-width: 489px;
-    flex-grow: 1;
-    flex-shrink: 0;
-}
-.user-input_2 {
-    height: max-content;
-    min-width: min-content;
-}
-.date-picker {
-    height: max-content;
-    min-width: 120px;
 }
 .dropdown::part(base) {
     height: max-content;
+}
+.button::part(base) {
+    color: var(--ig-surface-500);
 }

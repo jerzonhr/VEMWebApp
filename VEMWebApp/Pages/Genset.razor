@@ -60,7 +60,7 @@
                             <div class="row-layout group_3">
                                 <IgbSelect Outlined="true" Label="Location" class="select" genset-scope>
                                     <span slot="prefix">
-                                        <span class="material-icons icon">
+                                        <span class="material-icons icon_1">
                                             location_on
                                         </span>
                                     </span>
@@ -70,7 +70,7 @@
                                 </IgbSelect>
                                 <IgbSelect Outlined="true" Label="Customer" class="select" genset-scope>
                                     <span slot="prefix">
-                                        <span class="material-icons icon">
+                                        <span class="material-icons icon_1">
                                             person
                                         </span>
                                     </span>
@@ -80,7 +80,7 @@
                                 </IgbSelect>
                                 <IgbSelect Outlined="true" Label="Subaccount" class="select" genset-scope>
                                     <span slot="prefix">
-                                        <span class="material-icons icon">
+                                        <span class="material-icons icon_1">
                                             person
                                         </span>
                                     </span>
@@ -92,21 +92,21 @@
                             <div class="row-layout group_3">
                                 <IgbInput Label="Created By" Outlined="true" class="user-input" genset-scope>
                                     <span slot="prefix">
-                                        <span class="material-icons icon">
+                                        <span class="material-icons icon_1">
                                             person
                                         </span>
                                     </span>
                                 </IgbInput>
                                 <IgbInput Label="Teammate" Outlined="true" class="user-input" genset-scope>
                                     <span slot="prefix">
-                                        <span class="material-icons icon">
+                                        <span class="material-icons icon_1">
                                             person
                                         </span>
                                     </span>
                                 </IgbInput>
                                 <IgbInput Label="DS5 Ref" Outlined="true" class="user-input" genset-scope>
                                     <span slot="prefix">
-                                        <span class="material-icons icon">
+                                        <span class="material-icons icon_1">
                                             person
                                         </span>
                                     </span>
@@ -115,7 +115,7 @@
                             <div class="row-layout group_3">
                                 <IgbSelect Outlined="true" Label="Form Status" class="select" genset-scope>
                                     <span slot="prefix">
-                                        <span class="material-icons icon">
+                                        <span class="material-icons icon_1">
                                             info
                                         </span>
                                     </span>
@@ -128,14 +128,14 @@
                             <div class="row-layout group_3">
                                 <IgbInput DisplayType="InputType.Number" Label="Unit Number" Outlined="true" class="user-input" genset-scope>
                                     <span slot="prefix">
-                                        <span class="material-icons icon">
+                                        <span class="material-icons icon_1">
                                             numbers
                                         </span>
                                     </span>
                                 </IgbInput>
                                 <IgbInput DisplayType="InputType.Number" Label="Serial Number" Outlined="true" class="user-input" genset-scope>
                                     <span slot="prefix">
-                                        <span class="material-icons icon">
+                                        <span class="material-icons icon_1">
                                             numbers
                                         </span>
                                     </span>
@@ -160,7 +160,7 @@
                             <div class="row-layout group_6">
                                 <IgbSelect Outlined="true" Label="User Group" class="select" genset-scope>
                                     <span slot="prefix">
-                                        <span class="material-icons icon">
+                                        <span class="material-icons icon_1">
                                             person
                                         </span>
                                     </span>
@@ -170,7 +170,7 @@
                                 </IgbSelect>
                                 <IgbSelect Outlined="true" Label="EDI Status" class="select" genset-scope>
                                     <span slot="prefix">
-                                        <span class="material-icons icon">
+                                        <span class="material-icons icon_1">
                                             info
                                         </span>
                                     </span>
@@ -239,131 +239,10 @@
                 </div>
             </EditForm>
         </IgbTabPanel>
-        <IgbTab>
-            <span slot="prefix">
-                <span class="material-icons icon">
-                    person
-                </span>
-            </span>
-            <p class="typography__body-1 text">
-                Tab Header
-            </p>
-        </IgbTab>
-        <IgbTabPanel class="row-layout tab-item-content" genset-scope>
-            <IgbStepper TitlePosition="StepperTitlePosition.Bottom" @ref="_stepper" class="stepper" genset-scope>
-                <IgbStep Optional="true">
-                    <span slot="indicator" class="material-icons">
-                        local_gas_station
-                    </span>
-                    <div class="column-layout step-content">
-                        <div class="row-layout group_10">
-                            <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.NextAsync())" class="button_1" genset-scope>
-                                Next
-                                <IgbRipple></IgbRipple>
-                            </IgbButton>
-                            <IgbExpansionPanel Open="true" class="expansion-panel_2" genset-scope>
-                                <p class="typography__body-2 text">
-                                    Body 2
-                                </p>
-                                <IgbButton DisplayType="ButtonBaseType.Button" class="button_2" genset-scope>
-                                    Button
-                                    <IgbRipple></IgbRipple>
-                                </IgbButton>
-                                <span slot="title">Title goes here...</span>
-                                <span slot="subtitle">Subtitle goes here...</span>
-                            </IgbExpansionPanel>
-                        </div>
-                    </div>
-                    <p slot="title">Fueling</p>
-                </IgbStep>
-                <IgbStep Optional="true">
-                    <span slot="indicator" class="material-icons">
-                        precision_manufacturing
-                    </span>
-                    <div class="column-layout step-content">
-                        <div class="row-layout group_10">
-                            <EditForm class="column-layout form_1">
-                                <IgbInput Label="Label" Outlined="true" class="user-input_2" genset-scope></IgbInput>
-                                <IgbDatePicker Label="Date" Outlined="true" Mode="DatePickerMode.Dialog" class="date-picker" genset-scope></IgbDatePicker>
-                                <IgbRadioGroup Alignment="RadioGroupAlignment.Horizontal" Value="@_value" Change="@(e => _value = e.Detail.Value)" class="user-input_1" genset-scope>
-                                    <IgbRadio Value="1">
-                                        Label
-                                    </IgbRadio>
-                                    <IgbRadio Value="2">
-                                        Label
-                                    </IgbRadio>
-                                    <IgbRadio Value="3">
-                                        Label
-                                    </IgbRadio>
-                                </IgbRadioGroup>
-                                <IgbSelect Outlined="true" Label="Label/Placeholder" class="user-input_2" genset-scope>
-                                    <IgbSelectItem Value="Option">
-                                        Option
-                                    </IgbSelectItem>
-                                </IgbSelect>
-                                <IgbButton DisplayType="ButtonBaseType.Button" class="button_2" genset-scope>
-                                    Submit
-                                    <IgbRipple></IgbRipple>
-                                </IgbButton>
-                            </EditForm>
-                            <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.NextAsync())" class="button_1" genset-scope>
-                                Next
-                                <IgbRipple></IgbRipple>
-                            </IgbButton>
-                        </div>
-                    </div>
-                    <p slot="title">Mount/Unmount</p>
-                </IgbStep>
-                <IgbStep Invalid="true">
-                    <span slot="indicator" class="material-icons">
-                        shopping_basket
-                    </span>
-                    <div class="column-layout step-content">
-                        <p class="typography__body-1 text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur soluta nulla asperiores, officia ullam recusandae voluptatem omnis perferendis vitae non magni magnam praesentium placeat nemo quas repudiandae. Nisi, quo ex!
-                        </p>
-                        <div class="row-layout group_11">
-                            <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.PrevAsync())" class="button_1" genset-scope>
-                                Prev
-                                <IgbRipple></IgbRipple>
-                            </IgbButton>
-                            <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.NextAsync())" class="button_1" genset-scope>
-                                Next
-                                <IgbRipple></IgbRipple>
-                            </IgbButton>
-                        </div>
-                    </div>
-                    <p slot="title">Item</p>
-                </IgbStep>
-                <IgbStep Optional="true">
-                    <span slot="indicator" class="material-icons">
-                        shopping_basket
-                    </span>
-                    <div class="column-layout step-content">
-                        <p class="typography__body-1 text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur soluta nulla asperiores, officia ullam recusandae voluptatem omnis perferendis vitae non magni magnam praesentium placeat nemo quas repudiandae. Nisi, quo ex!
-                        </p>
-                        <div class="row-layout group_11">
-                            <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.PrevAsync())" class="button_1" genset-scope>
-                                Prev
-                                <IgbRipple></IgbRipple>
-                            </IgbButton>
-                            <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.ResetAsync())" class="button_1" genset-scope>
-                                Reset
-                                <IgbRipple></IgbRipple>
-                            </IgbButton>
-                        </div>
-                    </div>
-                    <p slot="title">Wrap</p>
-                    <p slot="subtitle">(Optional)</p>
-                </IgbStep>
-            </IgbStepper>
-        </IgbTabPanel>
     </IgbTabs>
 </div>
 
 @code {
-    private IgbStepper _stepper;
     private List<EmployeesType> _northwindEmployees = new();
     private string _value = "1";
 

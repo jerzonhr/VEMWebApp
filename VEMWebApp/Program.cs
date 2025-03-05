@@ -38,7 +38,6 @@ void RegisterIgniteUI(IServiceCollection services)
         typeof(IgbRadioModule),
         typeof(IgbCheckboxModule),
         typeof(IgbTextareaModule),
-        typeof(IgbButtonModule),
-        typeof(IgbStepperModule)
+        typeof(IgbButtonModule)
     );
 }
