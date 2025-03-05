@@ -14,7 +14,6 @@
   <ItemGroup>
     <None Update="Shared/MainLayout.razor.css" CssScope="master_view-scope" />
     <None Update="Pages/Genset.razor.css" CssScope="genset-scope" />
-    <None Update="Pages/View_1.razor.css" CssScope="view_1-scope" />
   </ItemGroup>
 
 </Project>

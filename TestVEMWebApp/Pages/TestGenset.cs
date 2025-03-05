@@ -27,8 +27,7 @@ namespace TestVEMWebApp
         typeof(IgbCheckboxModule),
         typeof(IgbTextareaModule),
         typeof(IgbButtonModule),
-        typeof(IgbRippleModule),
-        typeof(IgbStepperModule));
+        typeof(IgbRippleModule));
       ctx.Services.AddScoped<INorthwindService>(sp => new MockNorthwindService());
       var componentUnderTest = ctx.RenderComponent<Genset>();
       Assert.NotNull(componentUnderTest);
