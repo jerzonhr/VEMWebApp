@@ -10,7 +10,7 @@
             Genset
         </h2>
     </div>
-    <IgbTabs class="tabs" genset-scope>
+    <IgbTabs>
         <IgbTab Selected="true">
             <span slot="prefix">
                 <span class="material-icons icon">
@@ -22,24 +22,37 @@
             </p>
         </IgbTab>
         <IgbTabPanel class="column-layout tab-item-content" genset-scope>
-            <IgbGrid Data="@_northwindEmployees" PrimaryKey="EmployeeID" AllowFiltering="true" FilterMode="FilterMode.ExcelStyleFilter" class="ig-typography grid" genset-scope>
+            <IgbGrid Data="@_northwindEmployees" PrimaryKey="EmployeeID" RowEditable="true" Moving="true" AllowFiltering="true" FilterMode="FilterMode.ExcelStyleFilter" class="ig-typography grid" genset-scope>
+                <IgbGridToolbar>
+                    <IgbGridToolbarActions>
+                        <IgbGridToolbarPinning></IgbGridToolbarPinning>
+                        <IgbGridToolbarHiding></IgbGridToolbarHiding>
+                        <IgbGridToolbarExporter></IgbGridToolbarExporter>
+                        <IgbGridToolbarAdvancedFiltering></IgbGridToolbarAdvancedFiltering>
+                    </IgbGridToolbarActions>
+                    <IgbGridToolbarTitle>Grid Toolbar</IgbGridToolbarTitle>
+                </IgbGridToolbar>
                 <IgbPaginator></IgbPaginator>
-                <IgbColumn Field="EmployeeID" DataType="GridColumnDataType.Number" Header="employeeID" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="LastName" DataType="GridColumnDataType.String" Header="lastName" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="FirstName" DataType="GridColumnDataType.String" Header="firstName" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="Title" DataType="GridColumnDataType.String" Header="title" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="TitleOfCourtesy" DataType="GridColumnDataType.String" Header="titleOfCourtesy" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="BirthDate" DataType="GridColumnDataType.Date" Header="birthDate" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="HireDate" DataType="GridColumnDataType.Date" Header="hireDate" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="Address.Street" DataType="GridColumnDataType.String" Header="address street" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="Address.City" DataType="GridColumnDataType.String" Header="address city" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="Address.Region" DataType="GridColumnDataType.String" Header="address region" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="Address.PostalCode" DataType="GridColumnDataType.String" Header="address postalCode" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="Address.Country" DataType="GridColumnDataType.String" Header="address country" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="Address.Phone" DataType="GridColumnDataType.String" Header="address phone" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="ManagerID" DataType="GridColumnDataType.Number" Header="managerID" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="Notes" DataType="GridColumnDataType.String" Header="notes" Sortable="true" Selectable="false"></IgbColumn>
-                <IgbColumn Field="AvatarUrl" DataType="GridColumnDataType.String" Header="avatarUrl" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="EmployeeID" DataType="GridColumnDataType.Number" Header="employeeID" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="LastName" DataType="GridColumnDataType.String" Header="lastName" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="FirstName" DataType="GridColumnDataType.String" Header="firstName" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Title" DataType="GridColumnDataType.String" Header="title" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="TitleOfCourtesy" DataType="GridColumnDataType.String" Header="titleOfCourtesy" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="BirthDate" DataType="GridColumnDataType.Date" Header="birthDate" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="HireDate" DataType="GridColumnDataType.Date" Header="hireDate" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Street" DataType="GridColumnDataType.String" Header="address street" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.City" DataType="GridColumnDataType.String" Header="address city" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Region" DataType="GridColumnDataType.String" Header="address region" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.PostalCode" DataType="GridColumnDataType.String" Header="address postalCode" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Country" DataType="GridColumnDataType.String" Header="address country" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Phone" DataType="GridColumnDataType.String" Header="address phone" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="ManagerID" DataType="GridColumnDataType.Number" Header="managerID" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Notes" DataType="GridColumnDataType.String" Header="notes" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="AvatarUrl" DataType="GridColumnDataType.String" Header="avatarUrl" Groupable="true" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbActionStrip>
+                    <IgbGridPinningActions></IgbGridPinningActions>
+                    <IgbGridEditingActions AddRow="true"></IgbGridEditingActions>
+                </IgbActionStrip>
             </IgbGrid>
         </IgbTabPanel>
         <IgbTab>
@@ -57,6 +70,22 @@
                 <div class="row-layout group_1">
                     <IgbExpansionPanel Open="true" IndicatorPosition="ExpansionPanelIndicatorPosition.End" class="expansion-panel" genset-scope>
                         <div class="column-layout group_2">
+                            <div class="row-layout group_3">
+                                <IgbInput DisplayType="InputType.Number" Label="Unit Number" Outlined="true" class="user-input" genset-scope>
+                                    <span slot="prefix">
+                                        <span class="material-icons icon_1">
+                                            numbers
+                                        </span>
+                                    </span>
+                                </IgbInput>
+                                <IgbInput DisplayType="InputType.Number" Label="Serial Number" Outlined="true" class="user-input" genset-scope>
+                                    <span slot="prefix">
+                                        <span class="material-icons icon_1">
+                                            numbers
+                                        </span>
+                                    </span>
+                                </IgbInput>
+                            </div>
                             <div class="row-layout group_3">
                                 <IgbSelect Outlined="true" Label="Location" class="select" genset-scope>
                                     <span slot="prefix">
@@ -125,30 +154,14 @@
                                 </IgbSelect>
                                 <IgbDatePicker Label="Created On" Outlined="true" Mode="DatePickerMode.Dialog" class="user-input" genset-scope></IgbDatePicker>
                             </div>
-                            <div class="row-layout group_3">
-                                <IgbInput DisplayType="InputType.Number" Label="Unit Number" Outlined="true" class="user-input" genset-scope>
-                                    <span slot="prefix">
-                                        <span class="material-icons icon_1">
-                                            numbers
-                                        </span>
-                                    </span>
-                                </IgbInput>
-                                <IgbInput DisplayType="InputType.Number" Label="Serial Number" Outlined="true" class="user-input" genset-scope>
-                                    <span slot="prefix">
-                                        <span class="material-icons icon_1">
-                                            numbers
-                                        </span>
-                                    </span>
-                                </IgbInput>
-                            </div>
                         </div>
                         <span slot="title">Operation</span>
                     </IgbExpansionPanel>
                 </div>
-                <div class="row-layout group_4">
+                <div class="row-layout group_1">
                     <IgbExpansionPanel IndicatorPosition="ExpansionPanelIndicatorPosition.End" class="expansion-panel_1" genset-scope>
-                        <div class="column-layout group_5">
-                            <div class="row-layout group_6">
+                        <div class="column-layout group_4">
+                            <div class="row-layout group_5">
                                 <IgbDatePicker Label="EDI Sent Date" Outlined="true" Mode="DatePickerMode.Dialog" class="user-input" genset-scope></IgbDatePicker>
                                 <IgbDatePicker Label="Transfer Date" Outlined="true" Mode="DatePickerMode.Dialog" class="user-input" genset-scope></IgbDatePicker>
                                 <IgbDropdown class="dropdown" genset-scope>
@@ -157,7 +170,7 @@
                                     </IgbDropdownItem>
                                 </IgbDropdown>
                             </div>
-                            <div class="row-layout group_6">
+                            <div class="row-layout group_5">
                                 <IgbSelect Outlined="true" Label="User Group" class="select" genset-scope>
                                     <span slot="prefix">
                                         <span class="material-icons icon_1">
@@ -179,7 +192,7 @@
                                     </IgbSelectItem>
                                 </IgbSelect>
                             </div>
-                            <div class="row-layout group_7">
+                            <div class="row-layout group_6">
                                 <IgbRadioGroup Alignment="RadioGroupAlignment.Horizontal" Value="@_value" Change="@(e => _value = e.Detail.Value)" class="user-input_1" genset-scope>
                                     <IgbRadio Value="1">
                                         ST
@@ -201,14 +214,14 @@
                                     Approved
                                 </IgbCheckbox>
                             </div>
-                            <div class="row-layout group_8">
+                            <div class="row-layout group_7">
                                 <IgbTextarea Label="Notes" Outlined="true" class="textarea" genset-scope></IgbTextarea>
                             </div>
                         </div>
                         <span slot="title">General</span>
                     </IgbExpansionPanel>
                 </div>
-                <div class="row-layout group_4">
+                <div class="row-layout group_1">
                     <IgbExpansionPanel IndicatorPosition="ExpansionPanelIndicatorPosition.End" class="expansion-panel" genset-scope>
                         <IgbGrid Data="@_northwindEmployees" PrimaryKey="EmployeeID" AllowFiltering="true" FilterMode="FilterMode.ExcelStyleFilter" class="ig-typography grid_1" genset-scope>
                             <IgbColumn Field="EmployeeID" DataType="GridColumnDataType.Number" Header="employeeID" Sortable="true" Selectable="false"></IgbColumn>
@@ -231,7 +244,7 @@
                         <span slot="title">Criteria</span>
                     </IgbExpansionPanel>
                 </div>
-                <div class="row-layout group_9">
+                <div class="row-layout group_8">
                     <IgbButton DisplayType="ButtonBaseType.Submit" class="button" genset-scope>
                         Submit
                         <IgbRipple></IgbRipple>

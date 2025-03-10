@@ -40,8 +40,8 @@
 }
 .view-container {
     overflow: auto;
-    position: relative;
     flex-grow: 1;
+    flex-basis: 0;
 }
 .nav-drawer::part(main) {
     width: 200px;

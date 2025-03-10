@@ -1,0 +1,116 @@
+@page "/work_orders"
+@using Financial
+@using Models.Financial
+@using Northwind
+@using Models.Northwind
+@inject IFinancialService FinancialService
+@inject INorthwindService NorthwindService
+
+<div class="column-layout work-orders-container">
+    <div class="row-layout group">
+        <h2 class="h2">
+            Work Orders
+        </h2>
+    </div>
+    <EditForm class="column-layout form">
+        <IgbStepper TitlePosition="StepperTitlePosition.Bottom" @ref="_stepper" class="stepper" work_orders-scope>
+            <IgbStep Invalid="true">
+                <div class="column-layout step-content">
+                    <p class="typography__body-1 text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur soluta nulla asperiores, officia ullam recusandae voluptatem omnis perferendis vitae non magni magnam praesentium placeat nemo quas repudiandae. Nisi, quo ex!
+                    </p>
+                    <div class="row-layout group_1">
+                        <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.NextAsync())" class="button" work_orders-scope>
+                            Next
+                            <IgbRipple></IgbRipple>
+                        </IgbButton>
+                    </div>
+                    <IgbList class="list" work_orders-scope>
+                        <IgbListItem>
+                            <IgbAvatar slot="start" Shape="AvatarShape.Circle" class="avatar" work_orders-scope>
+                                <span class="material-icons">
+                                    person
+                                </span>
+                            </IgbAvatar>
+                            <div slot="title">Title goes here</div>
+                            <div slot="subtitle">Subtitle...</div>
+                            <span slot="end" class="material-icons icon">
+                                star
+                            </span>
+                        </IgbListItem>
+                    </IgbList>
+                </div>
+                <p slot="title">Address</p>
+            </IgbStep>
+            <IgbStep Invalid="true">
+                <div class="column-layout step-content">
+                    <p class="typography__body-1 text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur soluta nulla asperiores, officia ullam recusandae voluptatem omnis perferendis vitae non magni magnam praesentium placeat nemo quas repudiandae. Nisi, quo ex!
+                    </p>
+                    <div class="row-layout group_1">
+                        <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.PrevAsync())" class="button" work_orders-scope>
+                            Prev
+                            <IgbRipple></IgbRipple>
+                        </IgbButton>
+                        <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.NextAsync())" class="button" work_orders-scope>
+                            Next
+                            <IgbRipple></IgbRipple>
+                        </IgbButton>
+                        <IgbCombo Outlined="true" Data="@_financialBoxOfficeRevenue" Label="Label/Placeholder" DisplayKey="Franchise" T="object" class="combo" work_orders-scope></IgbCombo>
+                    </div>
+                </div>
+                <p slot="title">Item</p>
+            </IgbStep>
+            <IgbStep Optional="true">
+                <div class="column-layout step-content">
+                    <p class="typography__body-1 text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur soluta nulla asperiores, officia ullam recusandae voluptatem omnis perferendis vitae non magni magnam praesentium placeat nemo quas repudiandae. Nisi, quo ex!
+                    </p>
+                    <div class="row-layout group_1">
+                        <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.PrevAsync())" class="button" work_orders-scope>
+                            Prev
+                            <IgbRipple></IgbRipple>
+                        </IgbButton>
+                        <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => _stepper!.ResetAsync())" class="button" work_orders-scope>
+                            Reset
+                            <IgbRipple></IgbRipple>
+                        </IgbButton>
+                    </div>
+                    <IgbGrid Data="@_northwindEmployees" PrimaryKey="EmployeeID" AllowFiltering="true" FilterMode="FilterMode.ExcelStyleFilter" class="ig-typography grid" work_orders-scope>
+                        <IgbColumn Field="EmployeeID" DataType="GridColumnDataType.Number" Header="employeeID" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="LastName" DataType="GridColumnDataType.String" Header="lastName" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="FirstName" DataType="GridColumnDataType.String" Header="firstName" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="Title" DataType="GridColumnDataType.String" Header="title" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="TitleOfCourtesy" DataType="GridColumnDataType.String" Header="titleOfCourtesy" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="BirthDate" DataType="GridColumnDataType.Date" Header="birthDate" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="HireDate" DataType="GridColumnDataType.Date" Header="hireDate" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="Address.Street" DataType="GridColumnDataType.String" Header="address street" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="Address.City" DataType="GridColumnDataType.String" Header="address city" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="Address.Region" DataType="GridColumnDataType.String" Header="address region" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="Address.PostalCode" DataType="GridColumnDataType.String" Header="address postalCode" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="Address.Country" DataType="GridColumnDataType.String" Header="address country" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="Address.Phone" DataType="GridColumnDataType.String" Header="address phone" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="ManagerID" DataType="GridColumnDataType.Number" Header="managerID" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="Notes" DataType="GridColumnDataType.String" Header="notes" Sortable="true" Selectable="false"></IgbColumn>
+                        <IgbColumn Field="AvatarUrl" DataType="GridColumnDataType.String" Header="avatarUrl" Sortable="true" Selectable="false"></IgbColumn>
+                    </IgbGrid>
+                </div>
+                <p slot="title">Wrap</p>
+                <p slot="subtitle">(Optional)</p>
+            </IgbStep>
+        </IgbStepper>
+    </EditForm>
+</div>
+
+@code {
+    private IgbStepper _stepper;
+    private List<BoxOfficeRevenueType> _financialBoxOfficeRevenue = new();
+    private List<EmployeesType> _northwindEmployees = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _financialBoxOfficeRevenue = await FinancialService.GetBoxOfficeRevenue();
+        _northwindEmployees = await NorthwindService.GetEmployees();
+        await base.OnInitializedAsync();
+    }
+}

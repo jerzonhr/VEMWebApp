@@ -57,16 +57,16 @@
                 <div slot="content">Mount/Unmount</div>
             </IgbNavDrawerItem>
             <IgbNavDrawerHeaderItem>
-                <div>View 1</div>
+                <div>Work Orders</div>
             </IgbNavDrawerHeaderItem>
-            <IgbNavDrawerItem>
+            <IgbNavDrawerItem @onclick="@(() => NavigationManager.NavigateTo("/work_orders"))">
                 <span slot="icon">
                     <span class="material-icons icon_1">
-                        dashboard
+                        view_list
                     </span>
                     <IgbRipple></IgbRipple>
                 </span>
-                <div slot="content">View 3</div>
+                <div slot="content">Item template</div>
             </IgbNavDrawerItem>
         </IgbNavDrawer>
         <div class="view-container">

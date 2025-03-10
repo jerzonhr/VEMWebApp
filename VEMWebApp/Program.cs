@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using VEMWebApp;
 using VEMWebApp.Northwind;
+using VEMWebApp.Financial;
 using VEMWebApp.NorthwindSwagger;
 using VEMWebApp.State;
 using IgniteUI.Blazor.Controls;
@@ -12,6 +13,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddScoped<INorthwindService, NorthwindService>();
+builder.Services.AddScoped<IFinancialService, FinancialService>();
 builder.Services.AddScoped<INorthwindSwaggerService, NorthwindSwaggerService>();
 builder.Services.AddScoped<IStateService, StateService>();
 RegisterIgniteUI(builder.Services);
@@ -28,9 +30,11 @@ void RegisterIgniteUI(IServiceCollection services)
         typeof(IgbNavDrawerItemModule),
         typeof(IgbTabsModule),
         typeof(IgbGridModule),
+        typeof(IgbDataGridToolbarModule),
+        typeof(IgbActionStripModule),
         typeof(IgbExpansionPanelModule),
-        typeof(IgbSelectModule),
         typeof(IgbInputModule),
+        typeof(IgbSelectModule),
         typeof(IgbDatePickerModule),
         typeof(IgbDropdownModule),
         typeof(IgbDropdownItemModule),
@@ -38,6 +42,10 @@ void RegisterIgniteUI(IServiceCollection services)
         typeof(IgbRadioModule),
         typeof(IgbCheckboxModule),
         typeof(IgbTextareaModule),
-        typeof(IgbButtonModule)
+        typeof(IgbButtonModule),
+        typeof(IgbStepperModule),
+        typeof(IgbListModule),
+        typeof(IgbAvatarModule),
+        typeof(IgbComboModule)
     );
 }
