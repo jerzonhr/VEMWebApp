@@ -13,28 +13,22 @@
 }
 .group {
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     align-content: flex-start;
-    padding: 16px;
+    padding: 1rem;
     height: 10rem;
     min-width: 50px;
     min-height: 50px;
-    max-height: 10rem;
-    flex-shrink: 0;
-}
-.tabs {
-    min-width: 0;
-    min-height: 0;
-    flex-grow: 1;
+    max-height: max-content;
     flex-shrink: 0;
 }
 .group_1 {
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
-    position: relative;
     min-width: 50px;
     min-height: 50px;
+    flex-shrink: 0;
 }
 .expansion-panel {
     height: max-content;
@@ -63,20 +57,13 @@
     min-height: 50px;
     flex-shrink: 0;
 }
-.group_4 {
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: flex-start;
-    min-width: 50px;
-    min-height: 50px;
-}
 .expansion-panel_1 {
     min-width: 0;
     min-height: 0;
     flex-grow: 1;
     flex-basis: 0;
 }
-.group_5 {
+.group_4 {
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
@@ -86,7 +73,7 @@
     min-width: 50px;
     min-height: 50px;
 }
-.group_6 {
+.group_5 {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
@@ -98,31 +85,32 @@
     min-height: 50px;
     flex-shrink: 0;
 }
+.group_6 {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 2rem;
+    min-width: 50px;
+    min-height: 50px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
 .group_7 {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    gap: 1rem;
     min-width: 50px;
     min-height: 50px;
     flex-grow: 1;
     flex-shrink: 0;
 }
 .group_8 {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
-    min-width: 50px;
-    min-height: 50px;
-    flex-grow: 1;
-    flex-shrink: 0;
-}
-.group_9 {
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     align-content: flex-start;
+    position: relative;
     min-width: 50px;
     min-height: 50px;
     align-self: flex-end;
@@ -132,8 +120,7 @@
     height: max-content;
     min-width: min-content;
     align-self: center;
-    flex-grow: 1;
-    flex-basis: 0;
+    flex-shrink: 0;
 }
 .icon {
     --size: 24px;
@@ -157,7 +144,7 @@
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
-    overflow: auto;
+    padding: 1rem;
     height: 100%;
     min-width: 100%;
     min-height: 100%;
@@ -165,10 +152,9 @@
 }
 .tab-item-content_1 {
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: stretch;
     align-content: flex-start;
     gap: 0;
-    overflow: auto;
     height: 100%;
     min-width: 100%;
     min-height: 100%;
@@ -176,14 +162,13 @@
 }
 .grid {
     --ig-size: var(--ig-size-medium);
-    min-width: 600px;
-    min-height: 300px;
-    flex-grow: 1;
-    flex-basis: 0;
+    position: relative;
+    margin: 0;
+    max-height: 30rem;
 }
 .grid_1 {
     --ig-size: var(--ig-size-medium);
-    min-width: 300px;
+    min-width: 500px;
     min-height: 300px;
 }
 .form {
@@ -194,19 +179,17 @@
     padding: 1rem;
     min-width: 50px;
     min-height: 50px;
-    align-self: stretch;
-    flex-grow: 1;
     flex-shrink: 0;
-}
-.select {
-    height: max-content;
-    min-width: 180px;
-    flex-grow: 1;
-    flex-basis: 0;
 }
 .user-input {
     height: max-content;
     min-width: 120px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.select {
+    height: max-content;
+    min-width: 180px;
     flex-grow: 1;
     flex-basis: 0;
 }

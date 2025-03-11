@@ -16,9 +16,11 @@ namespace TestVEMWebApp
       ctx.Services.AddIgniteUIBlazor(
         typeof(IgbTabsModule),
         typeof(IgbGridModule),
+        typeof(IgbDataGridToolbarModule),
+        typeof(IgbActionStripModule),
         typeof(IgbExpansionPanelModule),
-        typeof(IgbSelectModule),
         typeof(IgbInputModule),
+        typeof(IgbSelectModule),
         typeof(IgbDatePickerModule),
         typeof(IgbDropdownModule),
         typeof(IgbDropdownItemModule),
