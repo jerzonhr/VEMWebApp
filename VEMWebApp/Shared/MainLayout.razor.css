@@ -62,3 +62,10 @@
     width: 24px;
     height: 24px;
 }
+
+/* Hide the navigation drawer on screens smaller than a certain width (e.g., 768px for tablets) */
+/*@media (max-width: 768px) {
+    .nav-drawer {
+        display: none;*/ /* Or visibility: hidden; */
+    /*}
+}*/

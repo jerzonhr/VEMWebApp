@@ -1,5 +1,6 @@
 @inherits LayoutComponentBase
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
 <div class="column-layout master-view-container">
     <IgbNavbar class="navbar" master_view-scope>
@@ -77,4 +78,39 @@
 
 @code {
     private IgbNavDrawer _navDrawer;
+
+    private DotNetObjectReference<MainLayout> _dotNetRef;
+    private IJSObjectReference _jsModule;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _dotNetRef = DotNetObjectReference.Create(this);
+            _jsModule = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./js/resizeHandler.js");
+            await _jsModule.InvokeVoidAsync("registerResizeHandler", _dotNetRef);
+        }
+    }
+
+    [JSInvokable]
+    public async Task OnResize(int width)
+    {
+        await _navDrawer.EnsureReady();
+        if (_navDrawer != null)
+        {
+            if (width <= 1000)
+            {
+                await _navDrawer.HideAsync();
+            }
+            else
+            {
+                await _navDrawer.ShowAsync();
+            }
+        }
+    }
+
+    public void Dispose()
+    {
+        _dotNetRef?.Dispose();
+    }
 }
