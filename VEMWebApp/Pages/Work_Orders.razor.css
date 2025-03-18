@@ -13,13 +13,11 @@
 }
 .group {
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     align-content: flex-start;
-    padding: 16px;
-    height: 10rem;
+    padding: 0 0 0 1rem;
     min-width: 50px;
     min-height: 50px;
-    max-height: 10rem;
     flex-shrink: 0;
 }
 .group_1 {
@@ -31,12 +29,11 @@
     min-width: 50px;
     min-height: 50px;
 }
-.h2 {
+.h4 {
     height: max-content;
     min-width: min-content;
     align-self: center;
-    flex-grow: 1;
-    flex-basis: 0;
+    flex-shrink: 0;
 }
 .text {
     height: max-content;

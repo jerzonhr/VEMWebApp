@@ -15,7 +15,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    padding: 1rem;
+    padding: 0 0 0 1rem;
     height: 10rem;
     min-width: 50px;
     min-height: 50px;
@@ -116,7 +116,7 @@
     align-self: flex-end;
     flex-shrink: 0;
 }
-.h2 {
+.h4 {
     height: max-content;
     min-width: min-content;
     align-self: center;
@@ -164,7 +164,8 @@
     --ig-size: var(--ig-size-medium);
     position: relative;
     margin: 0;
-    max-height: 30rem;
+    max-height: 36rem;
+    flex-shrink: 0;
 }
 .grid_1 {
     --ig-size: var(--ig-size-medium);
@@ -179,6 +180,7 @@
     padding: 1rem;
     min-width: 50px;
     min-height: 50px;
+    max-height: 100vh;
     flex-shrink: 0;
 }
 .user-input {
