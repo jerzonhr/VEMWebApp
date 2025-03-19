@@ -28,6 +28,7 @@
     flex-basis: 0;
 }
 .navbar {
+    color: var(--ig-gray-100);
     background-color: var(--ig-primary-100);
     height: max-content;
     min-width: min-content;

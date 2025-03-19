@@ -1,7 +1,8 @@
 :root {
-	--ig-font-family: 'Titillium Web', sans-serif;
+	--ig-font-family: "Nunito Sans";
 	--ig-primary-500: #12294C;
 	--ig-secondary-500: #BEA454;
+	--ig-surface-500: #f8f8fa;
 	--ig-error-500: #D91E49;
 	--ig-success-500: #93C22A;
 	--ig-warn-500: #F2CB3F;
