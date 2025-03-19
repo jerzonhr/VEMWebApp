@@ -51,14 +51,6 @@
     flex-grow: 1;
     flex-basis: 0;
 }
-.group_4 {
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: flex-start;
-    position: relative;
-    min-width: 50px;
-    min-height: 50px;
-}
 .icon {
     --size: 24px;
     font-size: 24px;
@@ -70,11 +62,8 @@
     margin: 0;
     flex-shrink: 0;
 }
-.icon_1 {
-    --size: 24px;
-    font-size: 24px;
-    width: 24px;
-    height: 24px;
+.avatar {
+    --ig-size: var(--ig-size-small);
 }
 .navbar {
     color: var(--ig-gray-100);
@@ -98,4 +87,7 @@
 }
 .nav-drawer::part(main) {
     width: 200px;
+}
+.list {
+    height: max-content;
 }

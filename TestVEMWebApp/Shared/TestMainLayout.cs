@@ -15,8 +15,8 @@ namespace TestVEMWebApp
       ctx.Services.AddIgniteUIBlazor(
         typeof(IgbNavbarModule),
         typeof(IgbNavDrawerModule),
-        typeof(IgbNavDrawerItemModule),
-        typeof(IgbRippleModule));
+        typeof(IgbListModule),
+        typeof(IgbAvatarModule));
       var componentUnderTest = ctx.RenderComponent<MainLayout>();
       Assert.NotNull(componentUnderTest);
     }

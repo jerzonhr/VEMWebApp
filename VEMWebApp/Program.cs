@@ -25,8 +25,8 @@ void RegisterIgniteUI(IServiceCollection services)
     services.AddIgniteUIBlazor(
         typeof(IgbNavbarModule),
         typeof(IgbNavDrawerModule),
-        typeof(IgbNavDrawerItemModule),
-        typeof(IgbRippleModule),
+        typeof(IgbListModule),
+        typeof(IgbAvatarModule),
         typeof(IgbTabsModule),
         typeof(IgbGridModule),
         typeof(IgbDataGridToolbarModule),
@@ -42,9 +42,8 @@ void RegisterIgniteUI(IServiceCollection services)
         typeof(IgbCheckboxModule),
         typeof(IgbTextareaModule),
         typeof(IgbButtonModule),
+        typeof(IgbRippleModule),
         typeof(IgbStepperModule),
-        typeof(IgbListModule),
-        typeof(IgbAvatarModule),
         typeof(IgbComboModule)
     );
 }

@@ -17,43 +17,28 @@
         </IgbNavbar>
     </div>
     <div class="row-layout group_3">
-        <div class="column-layout group_4">
-            <IgbNavDrawer Open="true" Position="NavDrawerPosition.Relative" @ref="_navDrawer" class="nav-drawer" master_view-scope>
-                <IgbNavDrawerHeaderItem>
-                    <div>Genset</div>
-                </IgbNavDrawerHeaderItem>
-                <IgbNavDrawerItem @onclick="@(() => NavigationManager.NavigateTo("/genset"))">
-                    <span slot="icon">
-                        <span class="material-icons icon_1">
-                            local_gas_station
+        <IgbNavDrawer Open="true" Position="NavDrawerPosition.Relative" @ref="_navDrawer" class="nav-drawer" master_view-scope>
+            <IgbList class="list" master_view-scope>
+                <IgbListHeader>Genset</IgbListHeader>
+                <IgbListItem @onclick="@(() => NavigationManager.NavigateTo("/genset"))">
+                    <IgbAvatar Shape="AvatarShape.Rounded" slot="start" class="avatar" master_view-scope>
+                        <span class="material-icons">
+                            person
                         </span>
-                        <IgbRipple></IgbRipple>
-                    </span>
-                    <div slot="content">Fueling</div>
-                </IgbNavDrawerItem>
-                <IgbNavDrawerItem>
-                    <span slot="icon">
-                        <span class="material-icons icon_1">
-                            precision_manufacturing
+                    </IgbAvatar>
+                    <div slot="title">Fueling</div>
+                </IgbListItem>
+                <IgbListHeader>Work Orders</IgbListHeader>
+                <IgbListItem @onclick="@(() => NavigationManager.NavigateTo("/work_orders"))">
+                    <IgbAvatar Shape="AvatarShape.Rounded" slot="start" class="avatar" master_view-scope>
+                        <span class="material-icons">
+                            list
                         </span>
-                        <IgbRipple></IgbRipple>
-                    </span>
-                    <div slot="content">Mount/Unmount</div>
-                </IgbNavDrawerItem>
-                <IgbNavDrawerHeaderItem>
-                    <div>Work Orders</div>
-                </IgbNavDrawerHeaderItem>
-                <IgbNavDrawerItem @onclick="@(() => NavigationManager.NavigateTo("/work_orders"))">
-                    <span slot="icon">
-                        <span class="material-icons icon_1">
-                            view_list
-                        </span>
-                        <IgbRipple></IgbRipple>
-                    </span>
-                    <div slot="content">Item template</div>
-                </IgbNavDrawerItem>
-            </IgbNavDrawer>
-        </div>
+                    </IgbAvatar>
+                    <div slot="title">Item Template</div>
+                </IgbListItem>
+            </IgbList>
+        </IgbNavDrawer>
         <div class="view-container">
             @Body
         </div>
