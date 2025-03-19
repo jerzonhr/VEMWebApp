@@ -224,4 +224,5 @@
 }
 .button::part(base) {
     color: var(--ig-surface-500);
+    background-color: var(--ig-secondary-500);
 }
