@@ -24,10 +24,9 @@ void RegisterIgniteUI(IServiceCollection services)
 {
     services.AddIgniteUIBlazor(
         typeof(IgbNavbarModule),
-        typeof(IgbIconButtonModule),
-        typeof(IgbRippleModule),
         typeof(IgbNavDrawerModule),
         typeof(IgbNavDrawerItemModule),
+        typeof(IgbRippleModule),
         typeof(IgbTabsModule),
         typeof(IgbGridModule),
         typeof(IgbDataGridToolbarModule),

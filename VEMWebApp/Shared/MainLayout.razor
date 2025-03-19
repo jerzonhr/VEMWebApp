@@ -4,74 +4,57 @@
 
 <div class="column-layout master-view-container">
     <div class="row-layout group">
+        <div @onclick="@(e => _navDrawer!.ToggleAsync())" class="row-layout group_1">
+            <span class="material-icons icon">
+                menu
+            </span>
+        </div>
         <IgbNavbar class="navbar" master_view-scope>
-            <IgbIconButton slot="start" Variant="IconButtonVariant.Flat" @onclick="@(e => _navDrawer!.ToggleAsync())" class="icon-button" master_view-scope>
-                <span class="material-icons icon">
-                    menu
-                </span>
-                <IgbRipple></IgbRipple>
-            </IgbIconButton>
-            <div class="row-layout group_1">
+            <div class="row-layout group_2">
                 <h6 class="h6">
                     VEM Web App
                 </h6>
             </div>
-            <IgbIconButton slot="end" Variant="IconButtonVariant.Flat" class="icon-button" master_view-scope>
-                <span class="material-icons icon">
-                    search
-                </span>
-                <IgbRipple></IgbRipple>
-            </IgbIconButton>
-            <IgbIconButton slot="end" Variant="IconButtonVariant.Flat" class="icon-button" master_view-scope>
-                <span class="material-icons icon">
-                    favorite
-                </span>
-                <IgbRipple></IgbRipple>
-            </IgbIconButton>
-            <IgbIconButton slot="end" Variant="IconButtonVariant.Flat" class="icon-button" master_view-scope>
-                <span class="material-icons icon">
-                    more_vert
-                </span>
-                <IgbRipple></IgbRipple>
-            </IgbIconButton>
         </IgbNavbar>
     </div>
-    <div class="row-layout group_2">
-        <IgbNavDrawer Open="true" Position="NavDrawerPosition.Relative" @ref="_navDrawer" class="nav-drawer" master_view-scope>
-            <IgbNavDrawerHeaderItem>
-                <div>Genset</div>
-            </IgbNavDrawerHeaderItem>
-            <IgbNavDrawerItem @onclick="@(() => NavigationManager.NavigateTo("/genset"))">
-                <span slot="icon">
-                    <span class="material-icons icon_1">
-                        local_gas_station
+    <div class="row-layout group_3">
+        <div class="column-layout group_4">
+            <IgbNavDrawer Open="true" Position="NavDrawerPosition.Relative" @ref="_navDrawer" class="nav-drawer" master_view-scope>
+                <IgbNavDrawerHeaderItem>
+                    <div>Genset</div>
+                </IgbNavDrawerHeaderItem>
+                <IgbNavDrawerItem @onclick="@(() => NavigationManager.NavigateTo("/genset"))">
+                    <span slot="icon">
+                        <span class="material-icons icon_1">
+                            local_gas_station
+                        </span>
+                        <IgbRipple></IgbRipple>
                     </span>
-                    <IgbRipple></IgbRipple>
-                </span>
-                <div slot="content">Fueling</div>
-            </IgbNavDrawerItem>
-            <IgbNavDrawerItem>
-                <span slot="icon">
-                    <span class="material-icons icon_1">
-                        precision_manufacturing
+                    <div slot="content">Fueling</div>
+                </IgbNavDrawerItem>
+                <IgbNavDrawerItem>
+                    <span slot="icon">
+                        <span class="material-icons icon_1">
+                            precision_manufacturing
+                        </span>
+                        <IgbRipple></IgbRipple>
                     </span>
-                    <IgbRipple></IgbRipple>
-                </span>
-                <div slot="content">Mount/Unmount</div>
-            </IgbNavDrawerItem>
-            <IgbNavDrawerHeaderItem>
-                <div>Work Orders</div>
-            </IgbNavDrawerHeaderItem>
-            <IgbNavDrawerItem @onclick="@(() => NavigationManager.NavigateTo("/work_orders"))">
-                <span slot="icon">
-                    <span class="material-icons icon_1">
-                        view_list
+                    <div slot="content">Mount/Unmount</div>
+                </IgbNavDrawerItem>
+                <IgbNavDrawerHeaderItem>
+                    <div>Work Orders</div>
+                </IgbNavDrawerHeaderItem>
+                <IgbNavDrawerItem @onclick="@(() => NavigationManager.NavigateTo("/work_orders"))">
+                    <span slot="icon">
+                        <span class="material-icons icon_1">
+                            view_list
+                        </span>
+                        <IgbRipple></IgbRipple>
                     </span>
-                    <IgbRipple></IgbRipple>
-                </span>
-                <div slot="content">Item template</div>
-            </IgbNavDrawerItem>
-        </IgbNavDrawer>
+                    <div slot="content">Item template</div>
+                </IgbNavDrawerItem>
+            </IgbNavDrawer>
+        </div>
         <div class="view-container">
             @Body
         </div>
