@@ -3,38 +3,40 @@
 @inject IJSRuntime JSRuntime
 
 <div class="column-layout master-view-container">
-    <IgbNavbar class="navbar" master_view-scope>
-        <IgbIconButton slot="start" Variant="IconButtonVariant.Flat" @onclick="@(e => _navDrawer!.ToggleAsync())" class="icon-button" master_view-scope>
-            <span class="material-icons icon">
-                menu
-            </span>
-            <IgbRipple></IgbRipple>
-        </IgbIconButton>
-        <div class="row-layout group">
-            <h6 class="h6">
-                VEM Web App
-            </h6>
-        </div>
-        <IgbIconButton slot="end" Variant="IconButtonVariant.Flat" class="icon-button" master_view-scope>
-            <span class="material-icons icon">
-                search
-            </span>
-            <IgbRipple></IgbRipple>
-        </IgbIconButton>
-        <IgbIconButton slot="end" Variant="IconButtonVariant.Flat" class="icon-button" master_view-scope>
-            <span class="material-icons icon">
-                favorite
-            </span>
-            <IgbRipple></IgbRipple>
-        </IgbIconButton>
-        <IgbIconButton slot="end" Variant="IconButtonVariant.Flat" class="icon-button" master_view-scope>
-            <span class="material-icons icon">
-                more_vert
-            </span>
-            <IgbRipple></IgbRipple>
-        </IgbIconButton>
-    </IgbNavbar>
-    <div class="row-layout group_1">
+    <div class="row-layout group">
+        <IgbNavbar class="navbar" master_view-scope>
+            <IgbIconButton slot="start" Variant="IconButtonVariant.Flat" @onclick="@(e => _navDrawer!.ToggleAsync())" class="icon-button" master_view-scope>
+                <span class="material-icons icon">
+                    menu
+                </span>
+                <IgbRipple></IgbRipple>
+            </IgbIconButton>
+            <div class="row-layout group_1">
+                <h6 class="h6">
+                    VEM Web App
+                </h6>
+            </div>
+            <IgbIconButton slot="end" Variant="IconButtonVariant.Flat" class="icon-button" master_view-scope>
+                <span class="material-icons icon">
+                    search
+                </span>
+                <IgbRipple></IgbRipple>
+            </IgbIconButton>
+            <IgbIconButton slot="end" Variant="IconButtonVariant.Flat" class="icon-button" master_view-scope>
+                <span class="material-icons icon">
+                    favorite
+                </span>
+                <IgbRipple></IgbRipple>
+            </IgbIconButton>
+            <IgbIconButton slot="end" Variant="IconButtonVariant.Flat" class="icon-button" master_view-scope>
+                <span class="material-icons icon">
+                    more_vert
+                </span>
+                <IgbRipple></IgbRipple>
+            </IgbIconButton>
+        </IgbNavbar>
+    </div>
+    <div class="row-layout group_2">
         <IgbNavDrawer Open="true" Position="NavDrawerPosition.Relative" @ref="_navDrawer" class="nav-drawer" master_view-scope>
             <IgbNavDrawerHeaderItem>
                 <div>Genset</div>
