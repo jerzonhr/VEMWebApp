@@ -3,6 +3,7 @@
 @using Models.Financial
 @using Northwind
 @using Models.Northwind
+@using Models.Form
 @inject IFinancialService FinancialService
 @inject INorthwindService NorthwindService
 
@@ -12,7 +13,7 @@
             Work Orders
         </h4>
     </div>
-    <EditForm class="column-layout form">
+    <EditForm Model="_formModel" OnSubmit="HandleSubmit" class="column-layout form">
         <IgbStepper TitlePosition="StepperTitlePosition.Bottom" @ref="_stepper" class="stepper" work_orders-scope>
             <IgbStep Invalid="true">
                 <div class="column-layout step-content">
@@ -103,9 +104,16 @@
 </div>
 
 @code {
+    [SupplyParameterFromForm]
+    private FormModel _formModel { get; set; } = new FormModel();
     private IgbStepper _stepper;
     private List<BoxOfficeRevenueType> _financialBoxOfficeRevenue = new();
     private List<EmployeesType> _northwindEmployees = new();
+
+    private void HandleSubmit()
+    {
+        Console.WriteLine("Form submitted");
+    }
 
     protected override async Task OnInitializedAsync()
     {

@@ -99,3 +99,19 @@
 .nav-drawer::part(main) {
     width: 200px;
 }
+.icon-button::part(base) {
+    color: var(--ig-surface-500);
+}
+.icon {
+    color: var(--ig-surface-500);
+}
+.h6 {
+    margin: 0;
+    flex-shrink: 0;
+}
+.icon_1 {
+    --size: 24px;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}

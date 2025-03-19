@@ -1,7 +1,9 @@
 @page "/"
 @page "/genset"
-@using Northwind
+@using Models
 @using Models.Northwind
+@using Northwind
+@using VEMWebApp.Models.Form
 @inject INorthwindService NorthwindService
 
 <div class="column-layout genset-container">
@@ -66,7 +68,7 @@
             </p>
         </IgbTab>
         <IgbTabPanel class="column-layout tab-item-content_1" genset-scope>
-            <EditForm class="column-layout form">
+            <EditForm Model="_formModel" OnSubmit="HandleSubmit" class="column-layout form">
                 <div class="row-layout group_1">
                     <IgbExpansionPanel Open="true" IndicatorPosition="ExpansionPanelIndicatorPosition.End" class="expansion-panel" genset-scope>
                         <div class="column-layout group_2">
@@ -256,9 +258,16 @@
 </div>
 
 @code {
+    [SupplyParameterFromForm]
+    private FormModel _formModel { get; set; } = new();
     private List<EmployeesType> _northwindEmployees = new();
     private string _value = "1";
 
+    private async Task HandleSubmit()
+    {
+        Console.WriteLine("Form submitted");
+        await Task.CompletedTask;
+    }
     protected override async Task OnInitializedAsync()
     {
         _northwindEmployees = await NorthwindService.GetEmployees();
