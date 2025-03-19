@@ -127,14 +127,26 @@
     font-size: 24px;
     width: 24px;
     height: 24px;
-    color: var(--ig-primary-100);
+    color: var(--ig-primary-300);
 }
 .text {
-    color: var(--ig-primary-100);
+    color: var(--ig-primary-300);
     height: max-content;
     min-width: min-content;
 }
 .icon_1 {
+    --size: 24px;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: var(--ig-primary-500);
+}
+.text_1 {
+    color: var(--ig-primary-500);
+    height: max-content;
+    min-width: min-content;
+}
+.icon_2 {
     --size: 24px;
     font-size: 24px;
     width: 24px;
@@ -164,7 +176,7 @@
     --ig-size: var(--ig-size-medium);
     position: relative;
     margin: 0;
-    max-height: 36rem;
+    max-height: 32rem;
     flex-shrink: 0;
 }
 .grid_1 {

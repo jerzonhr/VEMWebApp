@@ -14,10 +14,9 @@ namespace TestVEMWebApp
       ctx.JSInterop.Mode = JSRuntimeMode.Loose;
       ctx.Services.AddIgniteUIBlazor(
         typeof(IgbNavbarModule),
-        typeof(IgbIconButtonModule),
-        typeof(IgbRippleModule),
         typeof(IgbNavDrawerModule),
-        typeof(IgbNavDrawerItemModule));
+        typeof(IgbNavDrawerItemModule),
+        typeof(IgbRippleModule));
       var componentUnderTest = ctx.RenderComponent<MainLayout>();
       Assert.NotNull(componentUnderTest);
     }
