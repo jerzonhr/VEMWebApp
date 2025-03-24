@@ -77,7 +77,8 @@
 .nav-drawer {
     min-width: min-content;
     min-height: 0;
-    max-width: 200px;
+    max-width: 15rem;
+/*    width: 15rem;*/
     flex-shrink: 0;
 }
 .view-container {
